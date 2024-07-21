@@ -132,7 +132,7 @@ $msg="Booking Confirm successfully";
 							<th>Nama</th>
 							<th>No Telepon</th>
 							<th>Email</th>
-							<th>RegDate </th>
+							<th>Paket Wisata </th>
 							<th>From /To </th>
 							<th>Komentar </th>
 							<th>Status </th>
