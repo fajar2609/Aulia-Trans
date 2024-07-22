@@ -99,6 +99,7 @@ li.ned,li.wrt,li.tol{
     display: block;
 }
 .logo {
+    display: inline-flex;
     float: left;
 	 margin-right: 60px;
 }
