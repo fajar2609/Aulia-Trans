@@ -85,7 +85,7 @@ $query->execute();
 				</div>
 <!--heder end here-->
 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a><i class="fa fa-angle-right"></i>Mengelola Paket</li>
+                <li class="breadcrumb-item"><a href="dashboard.php">Home</a><i class="fa fa-angle-right"></i>Mengelola Paket</li>
             </ol>
 <div class="agile-grids">	
 				<!-- tables -->

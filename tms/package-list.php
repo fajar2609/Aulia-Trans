@@ -61,7 +61,7 @@ foreach($results as $result)
 					<h4>Nama Paket: <?php echo htmlentities($result->PackageName);?></h4>
 					<h6>Tipe Paket : <?php echo htmlentities($result->PackageType);?></h6>
 					<p><b>Lokasi Paket :</b> <?php echo htmlentities($result->PackageLocation);?></p>
-					<p><b>Fitur</b> <?php echo htmlentities($result->PackageFetures);?></p>
+					<p><b>Fasilitas</b> <?php echo htmlentities($result->PackageFetures);?></p>
 				</div>
 				<div class="col-md-3 room-right wow fadeInRight animated" data-wow-delay=".5s">
 					<h5>IDR <?php echo htmlentities($result->PackagePrice);?></h5>

@@ -17,7 +17,7 @@
 									
 									<li><a href="manage-bookings.php"><i class="fa fa-list" aria-hidden="true"></i>  <span>Mengelola Pemesanan</span><div class="clearfix"></div></a></li>
 									 <li><a href="manageissues.php"><i class="fa fa-table"></i>  <span>Mengelola Permasalahan</span><div class="clearfix"></div></a></li>
-									<li><a href="manage-enquires.php"><i class="fa fa-file-text-o" aria-hidden="true"></i>  <span>Pertanyaan</span><div class="clearfix"></div></a></li>
+									<li><a href="manage-enquires.php"><i class="fa fa-file-text-o" aria-hidden="true"></i>  <span>Saran Masukan</span><div class="clearfix"></div></a></li>
 									<li><a href="manage-pages.php"><i class="fa fa-file-text-o" aria-hidden="true"></i>  <span>Halaman</span><div class="clearfix"></div></a></li>
 							     
 									

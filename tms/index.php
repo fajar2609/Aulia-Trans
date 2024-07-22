@@ -12,7 +12,7 @@ include('includes/config.php');
 
 <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<link href="css/styles.css" rel='stylesheet' type='text/css' />
+<link href="css/styles.css" rel='stylesheet' type='text/css' /> 
 <!-- <link href="css/style.css" rel='stylesheet' type='text/css' /> -->
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
@@ -70,7 +70,7 @@ foreach($results as $result)
 					<h4>Nama Paket: <?php echo htmlentities($result->PackageName);?></h4>
 					<h6>Tipe Paket : <?php echo htmlentities($result->PackageType);?></h6>
 					<p><b>Lokasi Paket :</b> <?php echo htmlentities($result->PackageLocation);?></p>
-					<p><b>Fitur</b> <?php echo htmlentities($result->PackageFetures);?></p>
+					<p><b>Fasilitas</b> <?php echo htmlentities($result->PackageFetures);?></p>
 				</div>
 				<div class="col-md-3 room-right wow fadeInRight animated" data-wow-delay=".5s">
 					<h5>IDR <?php echo htmlentities($result->PackagePrice);?></h5>
