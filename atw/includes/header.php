@@ -76,7 +76,7 @@
 							<li><a href="page.php?type=aboutus">About</a></li>
 								<li><a href="package-list.php">Daftar Paket</a></li>
 								<li><a href="transportasi-list.php?type=privacy">Transportasi</a></li>
-								<li><a href="galeri.php?type=terms">Galeri</a></li>
+								<li><a href="galeri.php?type=gambar">Galeri</a></li>
 								<li><a href="page.php?type=contact">Kontak</a></li>
 								<?php if($_SESSION['login'])
 {?>

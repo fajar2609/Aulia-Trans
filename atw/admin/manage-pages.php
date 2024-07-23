@@ -129,6 +129,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                   <option value="manage-pages.php?type=privacy">privacy and policy</option>
                   <option value="manage-pages.php?type=aboutus">about us</option> 
                   <option value="manage-pages.php?type=contact">Contact us</option>
+				  <option value="manage-pages.php?type=gambar">Galeri</option>
                 </select>
 									</div>
 								</div>
