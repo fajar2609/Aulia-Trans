@@ -9,7 +9,7 @@ header('location:index.php');
 else{
 if(isset($_POST['submit']))
 {
-$pname=$_POST['transtname'];
+$pname=$_POST['transname'];
 $ptype=$_POST['transtype'];	
 // $plocation=$_POST['packagelocation'];
 // $pprice=$_POST['packageprice'];	

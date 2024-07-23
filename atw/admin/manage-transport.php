@@ -85,7 +85,7 @@ $query->execute();
 				</div>
 <!--heder end here-->
 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="dashboard.php">Home</a><i class="fa fa-angle-right"></i>Mengelola Paket</li>
+                <li class="breadcrumb-item"><a href="dashboard.php">Home</a><i class="fa fa-angle-right"></i>Mengelola Transportasi</li>
             </ol>
 <div class="agile-grids">	
 				<!-- tables -->
@@ -122,8 +122,8 @@ foreach($results as $result)
 							<td><?php echo htmlentities($result->TransType);?></td>
 							<!-- <td><?php echo htmlentities($result->PackageLocation);?></td> -->
 							<!-- <td>Rp<?php echo htmlentities($result->PackagePrice);?></td> -->
-							<!-- <td><?php echo htmlentities($result->Creationdate);?></td> -->
-							<td><a href="update-transport.php?pid=<?php echo htmlentities($result->TransId);?>"><button type="button" class="btn btn-primary btn-block">View Details</button></a><br />
+							<td><?php echo htmlentities($result->Creationdate);?></td>
+							<td><a href="update-transport.php?tid=<?php echo htmlentities($result->TransId);?>"><button type="button" class="btn btn-primary btn-block">View Details</button></a><br />
 <a href="manage-transport.php?action=delete&&id=<?php echo $result->TransId;?>" onclick="return confirm('Do you really want to delete?')" class="btn btn-danger btn-block">Delete</a>
 							</td>
 						  </tr>
