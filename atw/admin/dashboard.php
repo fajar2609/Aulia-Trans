@@ -116,7 +116,7 @@ $cnt3=$query3->rowCount();
 
 	<a href="manage-enquires.php" target="_blank">
 	<div class="four-grids">
-			<div class="col-md-4 four-grid">
+			<div class="col-md-3 four-grid">
 						<div class="four-agileinfo">
 							<div class="icon">
 								<i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
@@ -139,7 +139,7 @@ $cnt2=$query2->rowCount();
 
 
 	<a href="manage-enquires.php" target="_blank">
-			<div class="col-md-4 four-grid">
+			<div class="col-md-3 four-grid">
 						<div class="four-agileits">
 							<div class="icon">
 								<i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
@@ -158,7 +158,7 @@ $newenq=$query->rowCount();
 					</div></a>
 
 	<a href="manage-enquires.php" target="_blank">
-						<div class="col-md-4 four-grid">
+						<div class="col-md-3 four-grid">
 						<div class="four-w3ls">
 							<div class="icon">
 								<i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
@@ -178,6 +178,33 @@ $redenq=$query5->rowCount();
 						</div>
 					</div>
 				</a>
+
+
+				<a href="manage-transport.php" target="_blank">
+					<div class="col-md-3 four-grid">
+						<div class="four-wthree">
+							<div class="icon">
+								<i class="glyphicon glyphicon-briefcase" aria-hidden="true"></i>
+							</div>
+							<div class="four-text">
+								<h3>Total Transportasi</h3>
+																	<?php $sql3 = "SELECT TransId from tbltransportasi";
+$query3= $dbh -> prepare($sql3);
+$query3->execute();
+$results3=$query3->fetchAll(PDO::FETCH_OBJ);
+$cnt3=$query3->rowCount();
+					?>
+								<h4><?php echo htmlentities($cnt3);?></h4>
+								
+							</div>
+							
+						</div>
+					</div>
+						<div class="clearfix"></div>
+				</div>
+</a>
+
+
 <div class="clearfix"></div>
 				</div>
 	<div class="four-grids">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2024 at 03:39 PM
+-- Generation Time: Jul 23, 2024 at 09:49 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,6 +47,20 @@ INSERT INTO `admin` (`id`, `UserName`, `Name`, `EmailId`, `MobileNumber`, `Passw
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gambar`
+--
+
+CREATE TABLE `gambar` (
+  `ImageId` int(1) NOT NULL,
+  `FileName` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `judul` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `diupload` datetime NOT NULL,
+  `status` enum('1','0') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblbooking`
 --
 
@@ -68,15 +82,8 @@ CREATE TABLE `tblbooking` (
 --
 
 INSERT INTO `tblbooking` (`BookingId`, `PackageId`, `UserEmail`, `FromDate`, `ToDate`, `Comment`, `RegDate`, `status`, `CancelledBy`, `UpdationDate`) VALUES
-(1, 1, 'test@gmail.com', '2020-07-11', '2020-07-18', 'I want this package.', '2024-01-16 06:38:36', 2, 'u', '2024-01-30 05:18:29'),
-(2, 2, 'test@gmail.com', '2020-07-10', '2020-07-13', 'There is some discount', '2024-01-17 06:43:25', 1, NULL, '2024-01-31 01:21:17'),
-(3, 4, 'abir@gmail.com', '2020-07-11', '2020-07-15', 'When I get conformation', '2024-01-17 06:44:39', 2, 'a', '2024-01-30 05:18:52'),
-(4, 2, 'test@gmail.com', '2024-02-02', '2024-02-08', 'NA', '2024-01-31 02:03:27', 1, NULL, '2024-01-31 06:35:08'),
-(5, 3, 'test@gmail.com', '2024-01-31', '2024-02-05', 'please offer some discount', '2024-01-31 05:21:52', 0, NULL, NULL),
-(6, 2, 'garima12@gmail.com', '2024-03-01', '2024-03-05', 'NA', '2024-02-03 13:04:33', 1, NULL, '2024-02-03 13:05:29'),
 (7, 1, 'fajar@gmail.com', '2024-07-31', '2024-07-31', 'book', '2024-07-14 07:46:49', 1, NULL, '2024-07-14 08:37:32'),
 (8, 11, 'fajar@gmail.com', '2024-08-31', '2024-08-31', 'book', '2024-07-14 09:40:04', 0, NULL, NULL),
-(9, 1, 'fajar@gmail.com', '2024-09-28', '2024-09-28', 'book', '2024-07-14 13:36:37', 1, NULL, '2024-07-14 13:37:52'),
 (10, 1, 'fajar@gmail.com', '2024-08-31', '2024-08-31', 'book', '2024-07-21 10:59:29', 2, 'u', '2024-07-21 11:07:16');
 
 -- --------------------------------------------------------
@@ -150,7 +157,7 @@ CREATE TABLE `tblpages` (
 INSERT INTO `tblpages` (`id`, `type`, `detail`) VALUES
 (1, 'terms', '																				<p align=\"justify\"><span style=\"color: rgb(153, 0, 0); font-size: small; font-weight: 700;\">terms and condition page</span></p>\r\n										\r\n										'),
 (2, 'privacy', '										<span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat</span>\r\n										'),
-(3, 'aboutus', '										<div><span style=\"color: rgb(0, 0, 0); font-family: Georgia; font-size: 15px; text-align: justify; font-weight: bold;\">Welcome to Tourism Management System!!!</span></div><span style=\"font-family: &quot;courier new&quot;;\"><span style=\"color: rgb(0, 0, 0); font-size: 15px; text-align: justify;\">Since then, our courteous and committed team members have always ensured a pleasant and enjoyable tour for the clients. This arduous effort has enabled TMS to be recognized as a dependable Travel Solutions provider with three offices Delhi.</span><span style=\"color: rgb(80, 80, 80); font-size: 13px;\">&nbsp;We have got packages to suit the discerning traveler\'s budget and savor. Book your dream vacation online. Supported quality and proposals of our travel consultants, we have a tendency to welcome you to decide on from holidays packages and customize them according to your plan.</span></span>\r\n										'),
+(3, 'aboutus', '																				<div><span style=\"color: rgb(0, 0, 0); font-family: Georgia; font-size: 15px; text-align: justify; font-weight: bold;\">Welcome to&nbsp; Aulia Trans Wisata!!!</span></div><span style=\"font-family: &quot;courier new&quot;;\"><span style=\"color: rgb(0, 0, 0); font-size: 15px; text-align: justify;\">Since then, our courteous and committed team members have always ensured a pleasant and enjoyable tour for the clients. This arduous effort has enabled TMS to be recognized as a dependable Travel Solutions provider with three offices Delhi.</span><span style=\"color: rgb(80, 80, 80); font-size: 13px;\">&nbsp;We have got packages to suit the discerning traveler\'s budget and savor. Book your dream vacation online. Supported quality and proposals of our travel consultants, we have a tendency to welcome you to decide on from holidays packages and customize them according to your plan.</span></span>\r\n										\r\n										'),
 (11, 'contact', '																														<span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\">Jl. Menteng Dalam No. 42, RT.11/03, Menteng Dalam, Tebet, Jakarta Selatan</span>');
 
 -- --------------------------------------------------------
@@ -177,16 +184,39 @@ CREATE TABLE `tbltourpackages` (
 --
 
 INSERT INTO `tbltourpackages` (`PackageId`, `PackageName`, `PackageType`, `PackageLocation`, `PackagePrice`, `PackageFetures`, `PackageDetails`, `PackageImage`, `Creationdate`, `UpdationDate`) VALUES
-(1, 'Paket Wisata Bandung (Big Bus 59 seat)', 'Group Package', 'Lembang, Ciwidey, Cikole, dan lainnya', '200.000/pax', 'Transportasi, driver dan guide, bbm, retribusi tol dan parkir, air mineral, tiket wisata', 'Paket tidak termasuk keperluan pribadi diluar fasilitas, tidak termasuk snack dan makan, tidak termasuk wisata belanja/oleh-oleh, tipping', 'cikole.jpg', '2024-07-15 05:21:58', '2024-07-21 00:54:17'),
-(2, 'Paket Wisata Bandung (Medium Bus 29-31 seat)', 'Group Paket', 'Lembang, Ciwidey, Cikole, dan lainnya', '175.000/pax', 'Transportasi, driver dan guide, bbm, retribusi tol dan parkir, air mineral, tiket wisata', 'Paket tidak termasuk keperluan pribadi diluar fasilitas, tidak termasuk snack dan makan, tidak termasuk wisata belanja/oleh-oleh, tipping', 'janspark_bdg.jpg', '2024-07-15 05:21:58', '2024-07-21 00:51:50'),
-(3, 'Soulmate Special Bali - 7 Nights', 'Couple Package', 'Indonesia(Bali)', '5000', 'Free Pickup and drop facility, Free Wi-fi , Free professional guide', 'Airport transfers by private car | Popular Sightseeing included | Suitable for Couple and budget travelers', '1583140977_5_11.jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(4, 'Kerala - A Lovers Paradise - Value Added', 'Family Package', 'Kerala', '1000', 'Free Wi-fi, Free pick up and drop facility,', 'Visit Matupetty Dam, tea plantation and a spice garden | View sunset in Kanyakumari | AC Car at disposal for 2hrs extra (once per city)', 'images (2).jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(5, 'Short Trip To Dubai', 'Family', 'Dubai', '4500', 'Free pick up and drop facility, Free Wi-fi, Free breakfast', 'A Holiday Package for the entire family.', 'unnamed.jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(6, 'Sikkim Delight with Darjeeling (customizable)', 'Group', 'Sikkim', '3500', 'Free Breakfast, Free Pick up drop facility', 'Changu Lake and New Baba Mandir excursion | View the sunrise from Tiger Hill | Get Blessed at the famous Rumtek Monastery', 'download (2).jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(7, '6 Days in Guwahati and Shillong With Cherrapunji Excursion', 'Family Package', 'Guwahati(Sikkim)', '4500', 'Breakfast,  Accommodation » Pick-up » Drop » Sightseeing', 'After arrival at Guwahati airport meet our representative & proceed for Shillong. Shillong is the capital and hill station of Meghalaya, also known as Abode of Cloud, one of the smallest states in India. En route visit Barapani lake. By afternoon reach at Shillong. Check in to the hotel. Evening is leisure. Spent time as you want. Visit Police bazar. Overnight stay at Shillong.', '95995.jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(8, 'Grand Week in North East - Lachung, Lachen and Gangtok', 'Domestic Packages', 'Sikkim', '4500', 'Free Breakfast, Free Wi-fi', 'Changu Lakeand New Baba Mandir excursion | Yumthang Valley tour | Gurudongmar Lake excursion | Night stay in Lachen', 'download (3).jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(9, 'Gangtok & Darjeeling Holiday (Without Flights)', 'Family Package', 'Sikkim', '1000', 'Free Wi-fi, Free pickup and drop facility', 'Ideal tour for Family | Sightseeing in Gangtok and Darjeeling | Full day excursion to idyllic Changu Lake | Visit to Ghoom Monastery', '1540382781_shutterstock_661867435.jpg.jpg', '2024-07-15 05:21:58', '2024-01-30 05:20:56'),
-(11, 'Paket Keluarga', 'Family Package', 'Bandung', '155', 'Bus Pariwisata, tiket wisata, ', 'Bus Pariwisata, tiket wisata, ', 'cikole.jpg', '2024-07-14 09:36:22', NULL);
+(1, 'Paket Wisata Bandung (Big Bus 59 seat)', 'Group Package', 'Lembang, Ciwidey, Cikole, dan lainnya', '200.000/pax', 'Transportasi Bus AC, driver dan guide, bbm, retribusi tol dan parkir, air mineral, tiket wisata', 'Paket tidak termasuk keperluan pribadi diluar fasilitas, tidak termasuk snack dan makan, tidak termasuk wisata belanja/oleh-oleh, tipping, durasi kegiatan 1 hari', 'cikole.jpg', '2024-07-15 05:21:58', '2024-07-22 19:52:15'),
+(2, 'Paket Wisata Bandung (Medium Bus 29-31 seat)', 'Group Paket', 'Lembang, Ciwidey, Cikole, dan lainnya', '175.000/pax', 'Transportasi bus AC, driver dan guide, bbm, retribusi tol dan parkir, air mineral, tiket wisata', 'Paket tidak termasuk keperluan pribadi diluar fasilitas, tidak termasuk snack dan makan, tidak termasuk wisata belanja/oleh-oleh, tipping, durasi kegiatan 1 hari', 'janspark_bdg.jpg', '2024-07-15 05:21:58', '2024-07-22 19:52:28'),
+(3, 'Wisata Museum (Jakarta)', 'Paket Study Tour', 'Jakarta', '140.000/pax', 'Transportasi bus AC, driver dan guide, bbm, retribusi tol dan parkir, air mineral, tiket masuk, snack dan makan siang boxs', 'Durasi kegiatan 1 hari, belum termasuk tipping', 'museum_nasional.jpg', '2024-07-15 05:21:58', '2024-07-22 19:51:56'),
+(4, 'Puncak Area 2 Hari 1 Malam', 'Group Paket', 'Puncak Bogor', '230.000/pax', 'Transportasi bus AC, driver dan guide, bbm, retribusi tol dan parkir, air mineral.', 'Durasi Kegiatan 2 Hari 1 Malam, Min 50 pax, Penginapan sesuai program, makan sesuai program, tidak termasuk tipping', 'puncak-bogor.jpg', '2024-07-15 05:21:58', '2024-07-22 19:49:44'),
+(5, 'Kepulauan Seribu', 'Group Paket', 'Kepulauan Seribu', '200.000/pax', 'Transportasi bus AC, driver dan guide, bbm, retribusi tol dan parkir, air mineral, tiket masuk, snack dan makan siang boxs', 'Durasi kegiatan 1 hari, belum termasuk tipping', 'pulau seribu.jpeg', '2024-07-15 05:21:58', '2024-07-22 19:59:12'),
+(6, 'Kepulauan Seribu (Pulau Pramuka)', 'Group Paket', 'Kepulauan Seribu', '525.000/pax', 'Transportasi bus AC, driver dan guide, bbm, retribusi tol dan parkir, air mineral, tiket masuk, penginapan sesuai program, makan sesuai program', 'Durasi kegiatan 3 hari 2 malam, belum termasuk tipping', 'pulau pramuka.JPG', '2024-07-15 05:21:58', '2024-07-22 20:04:53'),
+(7, 'Taman Wisata Buah Mekarsari Outbound', 'Group Paket', 'Bogor', '165.000/pax', 'Transportasi bus AC, driver dan guide, bbm, retribusi tol dan parkir, air mineral, tiket masuk, snack dan makan siang boxs', 'Durasi kegiatan 1 hari, tidak termasuk tipping, min 50 pax\'s', 'taman-mekarsari.jpg', '2024-07-15 05:21:58', '2024-07-22 20:19:07'),
+(8, 'Taman Safari Indonesia', 'Group Paket', 'Bogor', '250.000/pax', 'Transportasi bus AC, driver dan guide, bbm, retribusi tol dan parkir, air mineral, tiket masuk, snack dan makan siang boxs', 'Durasi kegiatan 1 hari, belum termasuk tipping, min 50 pax\'s', 'taman-safari-.jpg', '2024-07-15 05:21:58', '2024-07-22 20:30:52'),
+(9, 'Paket Wisata Bromo Malang (5 hari 2 malam)', 'Group Paket', 'Bromo - Malang', '1.500.000/pax', 'Transportasi bus AC, driver dan guide, bbm, retribusi tol dan parkir, air mineral, tiket masuk, penginapan sesuai program, makan sesuai program', 'Durasi kegiatan 5 hari 2 malam, belum termasuk tipping, min 50 pax\'s', 'bromo-malang.jpg', '2024-07-15 05:21:58', '2024-07-22 20:34:39'),
+(11, 'Paket Wisata Dieng Plateau (3 hari 2 malam)', 'Group Paket', 'Dieng', '650.000/pax', 'Transportasi bus AC, driver dan guide, bbm, retribusi tol dan parkir, air mineral, tiket masuk, penginapan sesuai program, makan sesuai program', 'Durasi kegiatan 3 hari 2 malam, belum termasuk tipping, min 50 pax\'s', 'dieng-plateau.jpeg', '2024-07-14 09:36:22', '2024-07-22 20:40:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbltransportasi`
+--
+
+CREATE TABLE `tbltransportasi` (
+  `transid` int(11) NOT NULL,
+  `TransName` varchar(200) NOT NULL,
+  `TransType` varchar(150) NOT NULL,
+  `TransFetures` varchar(255) NOT NULL,
+  `TransDetails` mediumtext NOT NULL,
+  `TransImage` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbltransportasi`
+--
+
+INSERT INTO `tbltransportasi` (`transid`, `TransName`, `TransType`, `TransFetures`, `TransDetails`, `TransImage`) VALUES
+(1, 'Midas Nusantara', 'Big Bus', 'Bus Full AC, LCD TV, Microphone, USB Media, Karaoke, Charging Plug, Bagasi', '47 - 59 Seats, Comfortable Seats, Bus Full AC, LCD TV, Microphone, USB Media, Karaoke, Charging Plug, Bagasi', 'Midas Big Bus.jpeg'),
+(2, 'Midas Nusantara', 'Big Bus', 'Bus Full AC, LCD TV, Microphone, USB Media, Karaoke, Charging Plug, Bagasi', '47 - 59 Seats, Comfortable Seats, Bus Full AC, LCD TV, Microphone, USB Media, Karaoke, Charging Plug, Bagasi', 'Midas Big Bus 2.jpeg');
 
 -- --------------------------------------------------------
 
@@ -209,14 +239,8 @@ CREATE TABLE `tblusers` (
 --
 
 INSERT INTO `tblusers` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Password`, `RegDate`, `UpdationDate`) VALUES
-(1, 'Manju Srivatav', '4456464654', 'manju@gmail.com', '202cb962ac59075b964b07152d234b70', '2024-01-16 06:33:20', '2024-01-31 02:00:40'),
-(2, 'Kishan', '9871987979', 'kishan@gmail.com', '202cb962ac59075b964b07152d234b70', '2024-01-16 06:33:20', '2024-01-31 02:00:48'),
-(3, 'Salvi Chandra', '1398756416', 'salvi@gmail.com', '202cb962ac59075b964b07152d234b70', '2024-01-16 06:33:20', '2024-01-31 02:00:48'),
-(4, 'Abir', '4789756456', 'abir@gmail.com', '202cb962ac59075b964b07152d234b70', '2024-01-16 06:33:20', '2024-01-31 02:00:48'),
-(5, 'Test', '1987894654', 'test@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-01-16 06:33:20', '2024-01-31 02:00:48'),
-(9, 'Test Sample', '4654654564', 'testsample@gmail.com', '202cb962ac59075b964b07152d234b70', '2024-01-31 06:32:51', NULL),
 (10, 'Garima Singh', '1425362540', 'garima12@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-02-03 13:03:43', '2024-02-03 13:04:02'),
-(12, 'fajar', '0812987623', 'fajar@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '2024-07-14 07:45:39', NULL);
+(12, 'fajar', '0812987623', 'fajar@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', '2024-07-14 07:45:39', '2024-07-21 13:58:17');
 
 --
 -- Indexes for dumped tables
@@ -227,6 +251,12 @@ INSERT INTO `tblusers` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Password`,
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gambar`
+--
+ALTER TABLE `gambar`
+  ADD PRIMARY KEY (`ImageId`);
 
 --
 -- Indexes for table `tblbooking`
@@ -259,6 +289,12 @@ ALTER TABLE `tbltourpackages`
   ADD PRIMARY KEY (`PackageId`);
 
 --
+-- Indexes for table `tbltransportasi`
+--
+ALTER TABLE `tbltransportasi`
+  ADD PRIMARY KEY (`transid`);
+
+--
 -- Indexes for table `tblusers`
 --
 ALTER TABLE `tblusers`
@@ -277,10 +313,16 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `gambar`
+--
+ALTER TABLE `gambar`
+  MODIFY `ImageId` int(1) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tblbooking`
 --
 ALTER TABLE `tblbooking`
-  MODIFY `BookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `BookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tblenquiry`
@@ -305,6 +347,12 @@ ALTER TABLE `tblpages`
 --
 ALTER TABLE `tbltourpackages`
   MODIFY `PackageId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `tbltransportasi`
+--
+ALTER TABLE `tbltransportasi`
+  MODIFY `transid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tblusers`

@@ -4,15 +4,15 @@ error_reporting(0);
 include('includes/config.php');
 if(isset($_POST['submit2']))
 {
-$pid=intval($_GET['pkgid']);
+$pid=intval($_GET['trsid']);
 $useremail=$_SESSION['login'];
 $fromdate=$_POST['fromdate'];
 $todate=$_POST['todate'];
 $comment=$_POST['comment'];
 $status=0;
-$sql="INSERT INTO tblbooking(PackageId,UserEmail,FromDate,ToDate,Comment,status) VALUES(:pid,:useremail,:fromdate,:todate,:comment,:status)";
+$sql="INSERT INTO tbltransportasi(TransId,TransName,TransType,TransFeatures,TransDetails) VALUES(:tid,:tname,:ttype,:tfeatures,:tdetails)";
 $query = $dbh->prepare($sql);
-$query->bindParam(':pid',$pid,PDO::PARAM_STR);
+$query->bindParam(':tid',$tid,PDO::PARAM_STR);
 $query->bindParam(':useremail',$useremail,PDO::PARAM_STR);
 $query->bindParam(':fromdate',$fromdate,PDO::PARAM_STR);
 $query->bindParam(':todate',$todate,PDO::PARAM_STR);
@@ -105,10 +105,10 @@ $error="Something went wrong. Please try again";
 					/>
 				</div><?php }?>
 <?php 
-$pid=intval($_GET['pkgid']);
-$sql = "SELECT * from tbltourpackages where PackageId=:pid";
+$pid=intval($_GET['trsid']);
+$sql = "SELECT * from tbltransportasi where TransId=:tid";
 $query = $dbh->prepare($sql);
-$query -> bindParam(':pid', $pid, PDO::PARAM_STR);
+$query -> bindParam(':tid', $tid, PDO::PARAM_STR);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=1;

@@ -122,7 +122,7 @@ foreach($results as $result)
 							<td><?php echo htmlentities($result->TransType);?></td>
 							<!-- <td><?php echo htmlentities($result->PackageLocation);?></td> -->
 							<!-- <td>Rp<?php echo htmlentities($result->PackagePrice);?></td> -->
-							<td><?php echo htmlentities($result->Creationdate);?></td>
+							<!-- <td><?php echo htmlentities($result->Creationdate);?></td> -->
 							<td><a href="update-transport.php?tid=<?php echo htmlentities($result->TransId);?>"><button type="button" class="btn btn-primary btn-block">View Details</button></a><br />
 <a href="manage-transport.php?action=delete&&id=<?php echo $result->TransId;?>" onclick="return confirm('Do you really want to delete?')" class="btn btn-danger btn-block">Delete</a>
 							</td>
