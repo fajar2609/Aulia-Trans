@@ -100,6 +100,8 @@ $query = $dbh -> prepare($sql);
 $query -> bindParam(':pid', $pid, PDO::PARAM_STR);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
+echo($result);
+// echo('<script>console.log('.$result.');</script>');
 $cnt=1;
 if($query->rowCount() > 0)
 {

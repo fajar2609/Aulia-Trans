@@ -9,23 +9,23 @@ header('location:index.php');
 else{
 if(isset($_POST['submit']))
 {
-$pname=$_POST['transname'];
-$ptype=$_POST['transtype'];	
+$tname=$_POST['transname'];
+$ttype=$_POST['transtype'];	
 // $plocation=$_POST['packagelocation'];
 // $pprice=$_POST['packageprice'];	
-$pfeatures=$_POST['transfeatures'];
-$pdetails=$_POST['transdetails'];	
-$pimage=$_FILES["transimage"]["name"];
-move_uploaded_file($_FILES["transimage"]["tmp_name"],"transimages/".$_FILES["transimage"]["name"]);
+$tfeatures=$_POST['transfeatures'];
+$tdetails=$_POST['transdetails'];	
+$timage=$_FILES["transimage"]["name"];
+move_uploaded_file($_FILES["transimage"]["tmp_name"],"pacakgeimages/".$_FILES["transimage"]["name"]);
 $sql="INSERT INTO tbltransportasi(TransName,TransType,TransFetures,TransDetails,TransImage) VALUES(:tname,:ttype,:tfeatures,:tdetails,:timage)";
 $query = $dbh->prepare($sql);
-$query->bindParam(':tname',$pname,PDO::PARAM_STR);
-$query->bindParam(':ttype',$ptype,PDO::PARAM_STR);
+$query->bindParam(':tname',$tname,PDO::PARAM_STR);
+$query->bindParam(':ttype',$ttype,PDO::PARAM_STR);
 // $query->bindParam(':plocation',$plocation,PDO::PARAM_STR);
 // $query->bindParam(':pprice',$pprice,PDO::PARAM_STR);
-$query->bindParam(':tfeatures',$pfeatures,PDO::PARAM_STR);
-$query->bindParam(':tdetails',$pdetails,PDO::PARAM_STR);
-$query->bindParam(':timage',$pimage,PDO::PARAM_STR);
+$query->bindParam(':tfeatures',$tfeatures,PDO::PARAM_STR);
+$query->bindParam(':tdetails',$tdetails,PDO::PARAM_STR);
+$query->bindParam(':timage',$timage,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)

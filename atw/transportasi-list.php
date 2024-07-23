@@ -11,7 +11,7 @@ include('includes/config.php');
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/styles.css" rel='stylesheet' type='text/css' />
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
@@ -55,7 +55,7 @@ foreach($results as $result)
 {	?>
 			<div class="rom-btm">
 				<div class="col-md-3 room-left wow fadeInLeft animated" data-wow-delay=".5s">
-					<img src="admin/pacakgeimages/<?php echo htmlentities($result->PackageImage);?>" class="img-responsive" alt="">
+					<img src="admin/pacakgeimages/<?php echo htmlentities($result->TransImage);?>" class="img-responsive" alt="">
 				</div>
 				<div class="col-md-6 room-midle wow fadeInUp animated" data-wow-delay=".5s">
 					<h4>Nama Transportasi: <?php echo htmlentities($result->TransName);?></h4>
@@ -65,7 +65,7 @@ foreach($results as $result)
 				</div>
 				<div class="col-md-3 room-right wow fadeInRight animated" data-wow-delay=".5s">
 					<!-- <h5>IDR <?php echo htmlentities($result->PackagePrice);?></h5> -->
-					<a href="transportasi-details.php?pkgid=<?php echo htmlentities($result->PackageId);?>" class="view">Details</a>
+					<a href="transportasi-details.php?trsid=<?php echo htmlentities($result->TransId);?>" class="view">Details</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>

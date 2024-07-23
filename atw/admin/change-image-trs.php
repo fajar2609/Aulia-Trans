@@ -7,34 +7,29 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-$tid=intval($_GET['tid']);	
+	$imgid=intval($_GET['imgid']);
 if(isset($_POST['submit']))
 {
-$tname=$_POST['transname'];
-$ttype=$_POST['transtype'];	
-// $plocation=$_POST['packagelocation'];
-// $pprice=$_POST['packageprice'];	
-$tfeatures=$_POST['transfeatures'];
-$tdetails=$_POST['transdetails'];	
+
 $timage=$_FILES["transimage"]["name"];
-$sql="update TblTransportasi set TransName=:tname,TransType=:ttype,TransFetures=:tfeatures,TransDetails=:tdetails where TransId=:tid";
+move_uploaded_file($_FILES["transimage"]["tmp_name"],"pacakgeimages/".$_FILES["transimage"]["name"]);
+$sql="update TblTransportasi set TransImage=:timage where TransId=:imgid";
 $query = $dbh->prepare($sql);
-$query->bindParam(':tname',$tname,PDO::PARAM_STR);
-$query->bindParam(':ttype',$ttype,PDO::PARAM_STR);
-// $query->bindParam(':plocation',$plocation,PDO::PARAM_STR);
-// $query->bindParam(':pprice',$pprice,PDO::PARAM_STR);
-$query->bindParam(':tfeatures',$tfeatures,PDO::PARAM_STR);
-$query->bindParam(':tdetails',$tdetails,PDO::PARAM_STR);
-$query->bindParam(':tid',$tid,PDO::PARAM_STR);
+
+$query->bindParam(':imgid',$imgid,PDO::PARAM_STR);
+$query->bindParam(':timage',$timage,PDO::PARAM_STR);
 $query->execute();
-$msg="Transportasi Updated Successfully";
+$msg="Transportasi Created Successfully";
+
+
+
 }
 
 	?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>ATW | Admin Transportasi Creation</title>
+<title>ATW | Admin Transportation Creation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Pooled Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -80,92 +75,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 <!--heder end here-->
 	<ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="dashboard.php">Home</a><i class="fa fa-angle-right"></i>Update Transportasi </li>
+                <li class="breadcrumb-item"><a href="dashboard.php">Home</a><i class="fa fa-angle-right"></i>Update Transportation Image </li>
             </ol>
 		<!--grid-->
  	<div class="grid-form">
  
 <!---->
   <div class="grid-form1">
-  	       <h3>Update Transportasi</h3>
+  	       <h3>Update Transportation Image </h3>
   	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
   	         <div class="tab-content">
 						<div class="tab-pane active" id="horizontal-form">
-						
-<?php 
-$pid=intval($_GET['tid']);
-$sql = "SELECT * from TblTransportasi where TransId=:tid";
+							<form class="form-horizontal" name="package" method="post" enctype="multipart/form-data">
+						<?php 
+$imgid=intval($_GET['imgid']);
+$sql = "SELECT TransImage from TblTransportasi where TransId=:imgid";
 $query = $dbh -> prepare($sql);
-$query -> bindParam(':tid', $tid, PDO::PARAM_STR);
+$query -> bindParam(':imgid', $imgid, PDO::PARAM_STR);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{	?>
-
-							<form class="form-horizontal" name="trans" method="post" enctype="multipart/form-data">
-								<div class="form-group">
-									<label for="focusedinput" class="col-sm-2 control-label">Nama Transportasi</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control1" name="transname" id="transname" placeholder="Create Transportasi" value="<?php echo htmlentities($result->TransName);?>" required>
-									</div>
-								</div>
+{	?>	
 <div class="form-group">
-									<label for="focusedinput" class="col-sm-2 control-label">Tipe Transportasi</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control1" name="transtype" id="transtype" placeholder=" Tipe Transportasi" value="<?php echo htmlentities($result->TransType);?>" required>
-									</div>
-								</div>
-
-<!-- <div class="form-group"> -->
-									<!-- <label for="focusedinput" class="col-sm-2 control-label">Lokasi Paket</label> -->
-									<!-- <div class="col-sm-8"> -->
-										<!-- <input type="text" class="form-control1" name="packagelocation" id="packagelocation" placeholder=" Package Location" value="<?php echo htmlentities($result->PackageLocation);?>" required> -->
-									<!-- </div> -->
-								<!-- </div> -->
-
-<!-- <div class="form-group"> -->
-									<!-- <label for="focusedinput" class="col-sm-2 control-label">Harga Paket (IDR)</label> -->
-									<!-- <div class="col-sm-8"> -->
-										<!-- <input type="text" class="form-control1" name="packageprice" id="packageprice" placeholder=" Package Price is IDR" value="<?php echo htmlentities($result->PackagePrice);?>" required> -->
-									<!-- </div> -->
-								<!-- </div> -->
-
-<div class="form-group">
-									<label for="focusedinput" class="col-sm-2 control-label">Fasilitas</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control1" name="transfeatures" id="transfeatures" placeholder="Fasilitas" value="<?php echo htmlentities($result->TransFetures);?>" required>
-									</div>
-								</div>		
-
-
-<div class="form-group">
-									<label for="focusedinput" class="col-sm-2 control-label">Detail Transportasi</label>
-									<div class="col-sm-8">
-										<textarea class="form-control" rows="5" cols="50" name="transdetails" id="transdetails" placeholder="Trans Details" required><?php echo htmlentities($result->TransDetails);?></textarea> 
-									</div>
-								</div>															
-<div class="form-group">
-<label for="focusedinput" class="col-sm-2 control-label">Gambar</label>
+<label for="focusedinput" class="col-sm-2 control-label"> Transportation Image </label>
 <div class="col-sm-8">
-<img src="pacakgeimages/<?php echo htmlentities($result->TransImage);?>" width="200">&nbsp;&nbsp;&nbsp;<a href="change-image-trs.php?imgid=<?php echo htmlentities($result->TransId);?>">Change Image</a>
+<img src="pacakgeimages/<?php echo htmlentities($result->TransImage);?>" width="200">
 </div>
 </div>
-
+																					
 <div class="form-group">
-									<label for="focusedinput" class="col-sm-2 control-label">Last Updation Date</label>
+									<label for="focusedinput" class="col-sm-2 control-label">New Image</label>
 									<div class="col-sm-8">
-<?php echo htmlentities($result->UpdationDate);?>
+										<input type="file" name="transimage" id="transimage" required>
 									</div>
-								</div>		
+								</div>	
 								<?php }} ?>
 
 								<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">
 				<button type="submit" name="submit" class="btn-primary btn">Update</button>
+
 			</div>
 		</div>
 						

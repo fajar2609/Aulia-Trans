@@ -39,7 +39,7 @@ echo "<script type='text/javascript'> document.location = 'thankyou.php'; </scri
 											<ul>
 												
 												<li class="na-me">
-													<select id="country" name="issue" class="frm-field required sect" required="">
+													<select id="country" name="issue" class="frm-field required sect text-dark" required="">
 														<option value="">Select Issue</option> 		
 														<option value="Booking Issues">Booking Issues</option>
 														<option value="Cancellation"> Cancellation</option>
@@ -49,7 +49,7 @@ echo "<script type='text/javascript'> document.location = 'thankyou.php'; </scri
 												</li>
 											
 												<li class="descrip">
-									<input class="special" type="text" placeholder="description"  name="description" required="">
+									<input class="special text-dark" type="text" placeholder="description"  name="description" required="">
 												</li>
 													<div class="clearfix"></div>
 											</ul>
