@@ -7,7 +7,7 @@
 			<li class="prnt"><a href="profile.php">My Profile</a></li>
 				<li class="prnt"><a href="change-password.php">Change Password</a></li>
 			<li class="prnt"><a href="tour-history.php">My Tour History</a></li>
-			<li class="prnt"><a href="issuetickets.php">Raised Tickets</a></li>
+			<!-- <li class="prnt"><a href="issuetickets.php">Raised Tickets</a></li> -->
 		</ul>
 		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s"> 
 			<li class="tol">Welcome :</li>				
@@ -80,7 +80,7 @@
 								<li><a href="page.php?type=contact">Kontak</a></li>
 								<?php if($_SESSION['login'])
 {?>
-								<li>Need Help?<a href="#" data-toggle="modal" data-target="#myModal3"> / Write Us </a>  </li>
+								<!-- <li>Need Help?<a href="#" data-toggle="modal" data-target="#myModal3"> / Write Us </a>  </li> -->
 								<?php } else { ?>
 								<!-- <li><a href="enquiry.php"> Saran Masukan </a>  </li> -->
 								<?php } ?>

@@ -123,7 +123,7 @@ $query->execute();
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 				<div class="agile-tables">
 					<div class="w3l-table-info">
-					  <h2>Mengelola Pertanyaan</h2>
+					  <h2>Pertanyaan</h2>
 					    <table id="table">
 						<thead>
 						  <tr>
