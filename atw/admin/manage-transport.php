@@ -9,11 +9,11 @@ if($_GET['action']=='delete')
 {
 $id=intval($_GET['id']);
 //$query=mysqli_query($con,"delete from tbltourpackages where PackageId =:id");
-$sql ="delete from tbltransportasi where PackageId =:id";
+$sql ="delete from tbltransportasi where TransId =:id";
 $query = $dbh -> prepare($sql);
 $query -> bindParam(':id', $id, PDO::PARAM_STR);
 $query->execute();
- echo "<script>alert('Package deleted.');</script>";
+ echo "<script>alert('Trans deleted.');</script>";
  echo "<script>window.location.href='manage-transport.php'</script>";
 
 }

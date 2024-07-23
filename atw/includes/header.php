@@ -82,7 +82,7 @@
 {?>
 								<li>Need Help?<a href="#" data-toggle="modal" data-target="#myModal3"> / Write Us </a>  </li>
 								<?php } else { ?>
-								<li><a href="enquiry.php"> Saran Masukan </a>  </li>
+								<!-- <li><a href="enquiry.php"> Saran Masukan </a>  </li> -->
 								<?php } ?>
 								<div class="clearfix"></div>
 

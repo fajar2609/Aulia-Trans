@@ -94,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="tab-pane active" id="horizontal-form">
 						
 <?php 
-$pid=intval($_GET['tid']);
+$tid=intval($_GET['tid']);
 $sql = "SELECT * from TblTransportasi where TransId=:tid";
 $query = $dbh -> prepare($sql);
 $query -> bindParam(':tid', $tid, PDO::PARAM_STR);

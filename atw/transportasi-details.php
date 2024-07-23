@@ -57,7 +57,7 @@ include('includes/config.php');
 <?php include('includes/header.php');?>
 <div class="banner-3">
 	<div class="container">
-		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">ATW | Detail Paket</h1>
+		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">ATW | Detail Transportasi</h1>
 	</div>
 </div>
 <!--- /banner ---->
@@ -100,7 +100,8 @@ foreach($results as $result)
 				<h2><?php echo htmlentities($result->TransName);?></h2>
 				<p class="dow">#TRS-<?php echo htmlentities($result->TransId);?></p>
 				<p><b>Tipe Transportasi :</b> <?php echo htmlentities($result->TransType);?></p>
-				<p><b>Fasilitas</b> <?php echo htmlentities($result->TransFetures);?></p>
+				<p><b>Fasilitas :</b> </p>
+				<p><?php echo htmlentities($result->TransFetures);?></p>
 				<p><b>Detail Transportasi :</b> </p>
 				<p><?php echo htmlentities($result->TransDetails);?></p>
 				

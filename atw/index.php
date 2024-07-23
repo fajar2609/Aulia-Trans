@@ -90,8 +90,8 @@ foreach($results as $result)
 
 
 <!--- routes ---->
-<div class="routes">
-	<div class="container">
+<!-- <div class="routes"> -->
+	<!-- <div class="container">
 		<div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
 			<div class="rou-left">
 				<a href="#"><i class="glyphicon glyphicon-list-alt"></i></a>
@@ -124,7 +124,7 @@ foreach($results as $result)
 		</div>
 		<div class="clearfix"></div>
 	</div>
-</div>
+</div> -->
 
 <?php include('includes/footer.php');?>
 <!-- signup -->
